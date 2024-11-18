@@ -7,11 +7,13 @@ const axiosInstance = axios.create({
 
 axiosInstance.interceptors.request.use((config) => {
   const token = localStorage.getItem('JWToken');
+  config.headers['Accept'] = 'application/json';
+  config.headers['X-Requested-With'] = 'XMLHttpRequest';
+
   if (token) {
-    config.headers['Accept'] = 'application/json';
     config.headers['Authorization'] = 'Bearer ' + token;
-    config.headers['X-Requested-With'] = 'XMLHttpRequest';
   }
+  
   return config;
 }, (error) => {
   return Promise.reject(error);
@@ -21,7 +23,7 @@ axiosInstance.interceptors.response.use(
   (response) => response,
   (error) => {
     if (error.response && error.response.status === 401) {
-      if (error.response.data.message === "JWT expired") {
+      if (error.response.data.message.includes('JWT')) {
         localStorage.removeItem('JWToken');
         window.location.href = '/login';
       }

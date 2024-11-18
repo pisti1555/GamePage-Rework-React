@@ -9,8 +9,11 @@ import FormGroup from '../../../components/FormGroup/FormGroup';
 import { FaGoogle } from 'react-icons/fa';
 import { FaGithub } from 'react-icons/fa';
 
+interface LoginProps {
+  login: any
+}
 
-export default function Login() {
+export default function Login(props: LoginProps) {
   const [username, setUsername] = useState<string>('');
   const [password, setPassword] = useState<string>('');
   const [errors, setErrors] = useState<{ [key: string]: string }>({});
@@ -21,12 +24,7 @@ export default function Login() {
     setErrors({});
 
     try {
-      const response = await axiosInstance.post('login', {
-        username,
-        password
-      });
-      const token = response.data.data.token;
-      localStorage.setItem('JWToken', token);
+      await props.login(username, password);
       navigate('/');
     } catch (e) {
       setErrors(handleErrors(e));

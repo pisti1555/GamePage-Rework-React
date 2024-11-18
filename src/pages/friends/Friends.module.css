@@ -1,0 +1,174 @@
+.mainContainer {
+  position: relative;
+  margin: 0 auto;
+  display: flex;
+  flex: 1;
+  width: 80%;
+  height: 100%;
+  color: #fff;
+}
+
+.friendlistSection {
+  display: flexbox;
+  width: 60%;
+  height: 100%;
+  padding: 1em;
+  margin-right: 1em;
+}
+
+.friendList {
+  padding: 0;
+  margin: 0;
+}
+
+.friendList li {
+  display: flex;
+  list-style: none;
+  align-items: center;
+  background: var(--itemBackground);
+  padding: 5px;
+  border-radius: 1em;
+  transition: background 0.1s;
+}
+
+.friendList li a {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  text-decoration: none;
+  align-items: center;
+  color: #fff;
+}
+
+.friendList li a .imageContainer {
+  width: 50px;
+  height: 50px;
+  position: relative;
+  margin: 0.5em;
+  background: var(--itemBackground);
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.friendList li a .imageContainer img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.friendList li a span {
+  font-size: 25px;
+  font-weight: 400;
+}
+
+
+
+.searchSection {
+  display: flex;
+  height: 100%;
+  flex-grow: 1;
+  flex-direction: column;
+  padding: 1em;
+}
+
+.searchSection .head .search {
+  display: flex;
+  margin: 0;
+  align-items: center;
+}
+
+.searchSection .search input {
+  border: 1px solid #000;
+  outline: none;
+  border-radius: 1em;
+  width: 80%;
+  padding: 1em;
+}
+
+.searchSection ul {
+  padding: 0;
+  margin: 0;
+}
+
+.searchSection ul h3 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #000219;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.searchSection ul li {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  background: #000219;
+  margin: 10px;
+  border-radius: 10px;
+}
+
+.searchSection ul li .search-list-buttons {
+  display: flex;
+}
+
+.searchSection ul li a {
+  display: flex;
+  background: #000219;
+  border: 1px solid transparent;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  margin: 10px;
+  cursor: pointer;
+  margin-inline: 10px;
+  transition: all 0.1s;
+}
+
+
+.searchSection ul li .playerData {
+  display: flex;
+  list-style: none;
+  align-items: center;
+}
+
+.searchSection ul li .player-data .imageContainer {
+  width: 30px;
+  height: 30px;
+  position: relative;
+  background: #000000;
+  border-radius: 50%;
+  margin: 10px;
+}
+
+.searchSection ul li .playerData .imageContainer img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.searchSection ul li .playerData span {
+  margin-inline: 10px;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.friendlistSection ul li:hover,
+.friendlistSection ul li:focus {
+  background: #2a2a40;
+  box-shadow: 0 0 10px #333353;
+}
+
+.searchSection .search button:hover,
+.searchSection ul li a:hover,
+.searchSection .search button:focus,
+.searchSection ul li a:focus
+{
+  background: #008cff;
+  border: 1px solid #008cff;
+  text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 20px #ffffff;
+  box-shadow: 0 0 2px #008cff, 0 0 5px #008cff, 0 0 10px #008cff, 0 0 20px #008cff;
+}

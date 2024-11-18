@@ -1,0 +1,47 @@
+.container {
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.container .row {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1em;
+}
+
+.container .row .button {
+  background: #1a192b;
+  width: 100%;
+  padding: 0.75em;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 1px;
+  border-radius: 2em;
+  font-size: 2em;
+  font-weight: 600;
+  text-shadow: none;
+  cursor: pointer;
+  box-shadow: transparent;
+  color: #fff;
+  border: 1px solid #ffffff80;
+  transition: 0.3s ease;
+  user-select: none;
+}
+
+.container .row .button:hover,
+.container .row .button:active {
+  color: #ffffff;
+  background: #008cff;
+  border-color: #008cff;
+}

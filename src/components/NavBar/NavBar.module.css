@@ -1,0 +1,142 @@
+.navBar {
+  display: flex;
+  align-items: center;
+  width: auto;
+  height: 4em;
+  background: transparent;
+  margin: 0;
+  font-family: 'Poppins', Arial, Helvetica, sans-serif;
+  z-index: 10;
+}
+
+.navBar .homeLink {
+  text-decoration: none;
+  font-size: 1.5em;
+  margin: 0;
+  padding: 0;
+  margin-inline: 1em;
+  margin-right: auto;
+  color: #fff;
+}
+
+.navItems {
+  display: flex;
+  align-items: center;
+  margin-right: 2em;
+  gap: 2em;
+}
+.navButton {
+  position: relative;
+  cursor: pointer;
+  color: #fff;
+  text-decoration: none;
+}
+.navButton::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0;
+  height: 2px;
+  background-color: #fff;
+  transition: width 0.2s ease;
+}
+.navButton:hover::after {
+  width: 100%;
+}
+.navButtonActive {
+  position: relative;
+  cursor: pointer;
+  color: #fff;
+  text-decoration: none;
+}
+.navButtonActive::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 2px;
+  background-color: #fff;
+  transition: width 0.2s ease;
+}
+
+.navUser {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+.imageContainer {
+  height: 3em;
+  width: 3em;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 0.5em;
+}
+.imageContainer img {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+}
+.navUser .navProfileButton {
+  margin: 0;
+  padding: 0;
+  margin-inline: 1em;
+  color: #fff;
+  text-decoration: none;
+}
+.navUser:hover .navUserDropdown {
+  display: block;
+}
+
+.navUserDropdown {
+  display: none;
+  position: absolute;
+  top: 4em;
+  right: 0;
+  min-width: 10em;
+  padding: 1em;
+  backdrop-filter: blur(20px);
+  z-index: 10;
+  border-radius: 1em;
+  box-shadow: 0 0 20px #0000007b;
+}
+.dropdownUserData {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  border-bottom: 1px solid #707070;
+  margin-bottom: 1em;
+}
+.dropdownUserData .dropdownImageContainer {
+  width: 6em;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.dropdownUserData .dropdownImageContainer img {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+}
+.dropdownUserData p {
+  color: #fff;
+}
+.navUserDropdown .dropdownItem {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1em;
+  font-weight: 400;
+  padding: 0.5em 1em;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 1em;
+  background: transparent;
+  cursor: pointer;
+}
+.navUserDropdown .dropdownItem:hover,
+.navUserDropdown .dropdownItem:active {
+  background: #21006e;
+}
