@@ -28,11 +28,10 @@ axiosInstance.interceptors.response.use(
         window.location.href = '/login';
       }
     }
-    if (error.response && error.response.status === 404) {
-      window.location.href = '/not-found';
-    }
     if (error.response && error.response.status === 500) {
-      window.location.href = '/internal-server-error';
+      //window.location.href = '/internal-server-error';
+      console.log(error);
+      
     }
     return Promise.reject(error);
   }

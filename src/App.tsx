@@ -77,7 +77,7 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/user/:username" element={<ShowUser user={user} />} />
         <Route path="/friends" element={<Friends />} />
-        <Route path="/lobby" element={<LobbyPage />} />
+        <Route path="/lobby" element={<LobbyPage client={user} />} />
         <Route path="/fly-in-the-web" element={<FitwIndexPage />} />
         <Route path="/fly-in-the-web/scoreboard" element={<FitwScoreboardPage />} />
       </Routes>

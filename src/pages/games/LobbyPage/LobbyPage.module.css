@@ -1,0 +1,28 @@
+.mainContainer {
+  margin: 0 auto;
+  margin-top: 1em;
+  width: 80%;
+  min-height: 80%;
+  display: grid;
+  grid-template-columns: 3fr 2fr 2fr;
+  grid-template-rows: 9fr 1fr;
+  color: #fff;
+}
+
+.block {
+  padding: 1em;
+}
+
+.swap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1em;
+}
+.swap svg {
+  padding: 0.8em;
+  border-radius: 50%;
+  background: var(--itemBackground);
+  cursor: pointer;
+}
+

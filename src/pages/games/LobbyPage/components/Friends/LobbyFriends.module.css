@@ -1,0 +1,38 @@
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.list li {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  height: 2em;
+}
+.list li svg {
+  margin-left: auto;
+  margin-right: 1em;
+  cursor: pointer;
+  padding: 0.5em;
+  border-radius: 50%;
+  border: 1px solid #ccc;
+}
+.list li svg:hover {
+  fill: #4a43ff;
+  border-color: #4a43ff;
+  box-shadow: 0 0 10px #4a43ff;
+}
+
+.imageContainer {
+  height: 100%;
+  aspect-ratio: 1;
+  overflow: hidden;
+  border-radius: 50%;
+}
+.imageContainer img {
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+}

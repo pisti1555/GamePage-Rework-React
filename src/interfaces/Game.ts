@@ -4,5 +4,6 @@ export interface Game {
   url: string,
   thumbnailUrl: string,
   imageUrl: string,
-  description: string
+  description: string,
+  maxPlayers: number
 }
