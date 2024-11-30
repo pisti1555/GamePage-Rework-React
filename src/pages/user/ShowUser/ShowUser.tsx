@@ -6,7 +6,7 @@ import { getFriendsOfUser, getUserByUsername } from '../../../services/UserServi
 
 import defaultAvatar from '../../../images/user.jpg';
 import { Game } from '../../../interfaces/Game';
-import { getAllGames, getGameStatsOfUser } from '../../../services/GameService';
+import { getAllGames, getGameStatsOfUser } from '../../../services/game/GameService';
 import { GameStats } from '../../../interfaces/GameStats';
 import Loading from '../../../components/Loading/Loading';
 

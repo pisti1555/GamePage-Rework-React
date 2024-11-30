@@ -14,6 +14,7 @@ import { getUser } from './services/AuthService';
 import ShowUser from './pages/user/ShowUser/ShowUser';
 import FitwScoreboardPage from './pages/games/fitw/FitwScoreboard/FitwScoreboardPage';
 import LobbyPage from './pages/games/LobbyPage/LobbyPage';
+import FitwGamePage from './pages/games/fitw/FitwGamePage/FitwGamePage';
 
 function App() {
   const [authenticated, setAuthenticated] = useState<boolean>(false);
@@ -80,6 +81,7 @@ function App() {
         <Route path="/lobby" element={<LobbyPage client={user} />} />
         <Route path="/fly-in-the-web" element={<FitwIndexPage />} />
         <Route path="/fly-in-the-web/scoreboard" element={<FitwScoreboardPage />} />
+        <Route path="/fly-in-the-web/play" element={<FitwGamePage client={user} />} />
       </Routes>
     </Router>
   );

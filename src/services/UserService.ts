@@ -8,6 +8,12 @@ export const getUserByUsername = async (username?: string) => {
   return response.data.data;
 };
 
+export const getFriends = async () => {
+  if (localStorage.getItem('JWToken') === null) return; 
+  const response = await axiosInstance.get('friends');
+  return response.data.data;
+};
+
 export const getFriendsOfUser = async (username?: string) => {
   if (!username) return;
   if (localStorage.getItem('JWToken') === null) return; 

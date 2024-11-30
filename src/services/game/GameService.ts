@@ -1,4 +1,4 @@
-import axiosInstance from "../interceptors/Axios";
+import axiosInstance from "../../interceptors/Axios";
 
 export const getAllGames = async () => {
   const response = await axiosInstance.get('games');

@@ -1,5 +1,5 @@
-import axiosInstance from "../interceptors/Axios";
-import { Lobby } from "../interfaces/Lobby";
+import axiosInstance from "../../interceptors/Axios";
+import { Lobby, LobbyInvitation } from "../../interfaces/Lobby";
 
 export async function getLobby() {
   try {
@@ -21,17 +21,30 @@ export async function createLobby(gameId: number) {
 export async function joinLobby(lobbyId: number) {
   const response = await axiosInstance.post('lobby/' + lobbyId + '/join');
   const lobby = response.data.data;
+  console.log(response);
+  
   return lobby;
 }
 
-export async function leaveLobby(setLobby: React.Dispatch<React.SetStateAction<Lobby|undefined>>) {
+export async function declineInvitation(invId: number) {
+  const response = await axiosInstance.post('lobby/' + invId + '/decline');
+  const lobby = response.data.data;
+  return lobby;
+}
+
+export async function leaveLobby() {
   await axiosInstance.post('lobby/leave');
-  setLobby(undefined);
 }
 
 export async function inviteFriend(username: string) {
   const response = await axiosInstance.post('lobby/' + username + '/invite');
   return;
+}
+
+export async function getInvitations() {
+  const response = await axiosInstance.get('lobby/invitations');
+  const invitations: LobbyInvitation[] = response.data.data;
+  return invitations;
 }
 
 export async function kickPlayer(username: string) {
@@ -51,5 +64,5 @@ export async function unready() {
 
 export async function startGame() {
   const response = await axiosInstance.post('lobby/start');
-  return;
+  return response.data.data;
 }

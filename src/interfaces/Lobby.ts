@@ -4,10 +4,15 @@ export interface Lobby {
   id: number;
   members: User[];
   readyMembers: User[];
-  admin: User;
+  inGameMembers: User[];
+  maxPlayers: number;
   gameName: string;
   gameId: number;
-  maxPlayers: number;
-  isReady: boolean;
-  isStarted: boolean;
+}
+
+export interface LobbyInvitation {
+  invitationId: number;
+  lobbyId: number;
+  inviter: User;
+  invited: User;
 }

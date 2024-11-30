@@ -5,24 +5,39 @@ import { User } from '../../../../../interfaces/User';
 
 import defaultAvatar from '../../../../../images/user.jpg';
 import { IoPersonAdd } from 'react-icons/io5';
-import { inviteFriend } from '../../../../../services/LobbyService';
+import { inviteFriend } from '../../../../../services/game/LobbyService';
+import { getFriends } from '../../../../../services/UserService';
 
-export default function LobbyFriends() {
+interface Props {
+  maxPlayers: number;
+  members: User[];
+}
+
+export default function LobbyFriends(props: Props) {
   const [friends, setFriends] = useState<User[]>([]);
 
   useEffect(() => {
-    const getFriends = async () => {
-      const response = await axiosInstance.get('friends');
-      const friends = response.data.data;
+    const fetchFriends = async () => {
+      const friends = await getFriends();
       setFriends(friends);
     };
 
-    getFriends();
+    fetchFriends();
   }, []);
+
+  if (props.members.length === props.maxPlayers) {
+    return (
+      <h3>Lobby is full</h3>
+    );
+  }
 
   return (
     <ul className={css.list}>
       {friends.map(friend => {
+        if (props.members.includes(friend)) {
+          return null;
+        }
+
         return (
           <li key={'friend'+friend.id}>
             <div className={css.imageContainer}>
