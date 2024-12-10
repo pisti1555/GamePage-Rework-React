@@ -13,8 +13,11 @@ import { User } from './interfaces/User';
 import { getUser } from './services/AuthService';
 import ShowUser from './pages/user/ShowUser/ShowUser';
 import FitwScoreboardPage from './pages/games/fitw/FitwScoreboard/FitwScoreboardPage';
-import LobbyPage from './pages/games/LobbyPage/LobbyPage';
+import LobbyPage from './pages/games/lobby/LobbyPage/LobbyPage';
 import FitwGamePage from './pages/games/fitw/FitwGamePage/FitwGamePage';
+import TicTacToeGamePage from './pages/games/tictactoe/TicTacToeGamePage/TicTacToeGamePage';
+import TicTacToeIndexPage from './pages/games/tictactoe/TicTacToeIndexPage/TicTacToeIndexPage';
+import TicTacToeScoreboardPage from './pages/games/tictactoe/TicTacToeScoreboard/TicTacToeScoreboardPage';
 
 function App() {
   const [authenticated, setAuthenticated] = useState<boolean>(false);
@@ -82,6 +85,10 @@ function App() {
         <Route path="/fly-in-the-web" element={<FitwIndexPage />} />
         <Route path="/fly-in-the-web/scoreboard" element={<FitwScoreboardPage />} />
         <Route path="/fly-in-the-web/play" element={<FitwGamePage client={user} />} />
+
+        <Route path="/tic-tac-toe" element={<TicTacToeIndexPage />} />
+        <Route path="/tic-tac-toe/scoreboard" element={<TicTacToeScoreboardPage />} />
+        <Route path="/tic-tac-toe/play" element={<TicTacToeGamePage client={user} />} />
       </Routes>
     </Router>
   );

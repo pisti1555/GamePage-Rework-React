@@ -1,0 +1,16 @@
+.gameOverContainer {
+  margin: 0 auto;
+  margin-top: 5em;
+  text-align: center;
+  color: #ccc;
+}
+
+.backButton {
+  padding: 1em 2em;
+  border: 0;
+  background: var(--itemBackground);
+  color: #fff;
+  border-radius: 1em;
+  cursor: pointer;
+  box-shadow: 0 0 5px #000;
+}
